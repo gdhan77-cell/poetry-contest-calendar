@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전국시낭송대회 일정 안내</title>
+<meta name="description" content="전국 시낭송대회 시행 일정을 구글 캘린더로 한눈에 확인하세요. 편저: 시낭송지도자 한경동.">
+<meta name="theme-color" content="#2c1e12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232c1e12'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle' fill='%23e8d9b5'%3E%E2%9C%92%3C/text%3E%3C/svg%3E">
+<style>
+    :root{
+        --ink:#2c1e12;
+        --ink-soft:#4a3524;
+        --cream:#faf6ef;
+        --gold:#b8935a;
+        --gold-soft:#e8d9b5;
+    }
+    *{box-sizing:border-box;}
+    html{height:100%;}
+    body{
+        margin:0;
+        min-height:100%;
+        display:flex;
+        flex-direction:column;
+        background:var(--cream);
+        color:#33302b;
+        font-family:'Nanum Myeongjo','NanumGothic','Malgun Gothic','Apple SD Gothic Neo',serif;
+        -webkit-text-size-adjust:100%;
+    }
+
+    /* ── 상단 바 ── */
+    header{
+        background:linear-gradient(180deg,#2c1e12 0%,#3a281830 100%),var(--ink);
+        color:#fff;
+        border-bottom:3px solid var(--gold);
+    }
+    .bar{
+        max-width:1440px;
+        margin:0 auto;
+        padding:14px 22px;
+        display:flex;
+        align-items:center;
+        gap:18px;
+        flex-wrap:wrap;
+    }
+    .title-box{flex:1 1 320px; min-width:0;}
+    h1{
+        margin:0;
+        font-size:clamp(20px,2.2vw,27px);
+        letter-spacing:.5px;
+        font-weight:700;
+        word-break:keep-all;
+        line-height:1.3;
+    }
+    h1 .mark{color:var(--gold-soft); margin-right:6px;}
+    .sub{
+        margin:5px 0 0;
+        font-size:13.5px;
+        color:#e6dccb;
+        font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+        word-break:keep-all;
+        line-height:1.45;
+    }
+    .meta{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        flex-wrap:wrap;
+        font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+        font-size:14px;
+    }
+    .author{color:#f4ecdd; white-space:nowrap;}
+    .author b{color:#fff;}
+    .price{
+        color:#2c1e12;
+        background:var(--gold-soft);
+        border-radius:999px;
+        padding:4px 12px;
+        font-weight:700;
+        font-size:13px;
+        white-space:nowrap;
+    }
+    .btn-call{
+        display:inline-flex;
+        align-items:center;
+        gap:6px;
+        background:#27ae60;
+        color:#fff;
+        text-decoration:none;
+        padding:9px 18px;
+        border-radius:999px;
+        font-weight:700;
+        font-size:14.5px;
+        white-space:nowrap;
+        box-shadow:0 3px 10px rgba(0,0,0,.25);
+        transition:background .2s ease, transform .2s ease;
+    }
+    .btn-call:hover{background:#219150; transform:translateY(-1px);}
+
+    /* ── 캘린더 ── */
+    main{
+        flex:1 1 auto;
+        display:flex;
+        width:100%;
+        max-width:1440px;
+        margin:0 auto;
+        padding:14px 14px 10px;
+        min-height:560px;
+        height:78vh;
+    }
+    .calendar-frame{
+        flex:1 1 auto;
+        width:100%;
+        min-width:0;
+        border:1px solid #e4dccb;
+        border-radius:12px;
+        overflow:hidden;
+        background:#fff;
+        box-shadow:0 6px 22px rgba(44,30,18,.10);
+    }
+    .calendar-frame iframe{
+        display:block;
+        width:100%;
+        height:100%;
+        border:0;
+    }
+
+    /* ── 하단 ── */
+    footer{
+        background:var(--ink);
+        color:#cbbfa8;
+        text-align:center;
+        font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+        font-size:12.5px;
+        line-height:1.6;
+        padding:12px 16px;
+    }
+    footer b{color:#efe4cd; font-weight:600;}
+
+    @media (max-width:760px){
+        .bar{padding:12px 14px; gap:10px;}
+        .title-box{flex:1 1 100%;}
+        .meta{flex:1 1 100%; justify-content:space-between;}
+        .btn-call{padding:8px 14px; font-size:14px;}
+        main{height:auto; padding:10px 8px 8px; flex:1 1 auto;}
+        main{min-height:600px;}
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="bar">
+        <div class="title-box">
+            <h1><span class="mark">✒</span>전국시낭송대회 일정 안내</h1>
+            <p class="sub">전국 시낭송대회 시행 일정을 한눈에 — 아래 캘린더에서 확인하세요.</p>
+        </div>
+        <div class="meta">
+            <span class="author">편저: 시낭송지도자 <b>한경동</b></span>
+            <span class="price">정가 20,000원</span>
+            <a href="tel:010-8710-9935" class="btn-call">📞 사용법 문의</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="calendar-frame">
+        <iframe src="https://calendar.google.com/calendar/embed?src=27eaa1521815b7168379477f523657dcb327ee03e8e881f32a610b0cf7d506dd%40group.calendar.google.com&ctz=Asia%2FSeoul" frameborder="0" scrolling="no" title="전국시낭송대회 일정 캘린더"></iframe>
+    </div>
+</main>
+
+<footer>
+    <b>© 시낭송지도자 한경동. All Rights Reserved.</b><br>
+    본 서비스는 전국 시낭송대회 일정을 기반으로 정기 업데이트됩니다.
+</footer>
+
+</body>
+</html>
