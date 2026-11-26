@@ -5,39 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>전국시낭송대회 일정 안내</title>
 <meta name="description" content="전국 시낭송대회 시행 일정을 구글 캘린더로 한눈에 확인하세요. 편저: 시낭송지도자 한경동.">
-<meta name="theme-color" content="#2c1e12">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232c1e12'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle' fill='%23e8d9b5'%3E%E2%9C%92%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#09090b">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2309090b'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle' fill='%23c9a86a'%3E%E2%9C%92%3C/text%3E%3C/svg%3E">
 <style>
     :root{
-        --ink:#2c1e12;
-        --ink-soft:#4a3524;
-        --cream:#faf6ef;
-        --gold:#b8935a;
+        --bg:#09090b;
+        --surface:#111114;
+        --line:#27272a;
+        --text:#ffffff;
+        --text-soft:#e4e4e7;
+        --text-dim:#a1a1aa;
+        --gold:#c9a86a;
         --gold-soft:#e8d9b5;
     }
     *{box-sizing:border-box;}
-    html{height:100%;}
+    html{height:100%; background:var(--bg); color-scheme:dark;}
     body{
         margin:0;
         min-height:100%;
         display:flex;
         flex-direction:column;
-        background:var(--cream);
-        color:#33302b;
+        background:var(--bg);
+        color:var(--text-soft);
         font-family:'Nanum Myeongjo','NanumGothic','Malgun Gothic','Apple SD Gothic Neo',serif;
         -webkit-text-size-adjust:100%;
     }
 
     /* ── 상단 바 ── */
     header{
-        background:linear-gradient(180deg,#2c1e12 0%,#3a281830 100%),var(--ink);
-        color:#fff;
-        border-bottom:3px solid var(--gold);
+        background:var(--bg);
+        color:var(--text);
+        border-bottom:1px solid var(--line);
+        box-shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 24px rgba(0,0,0,.55);
     }
     .bar{
         max-width:1440px;
         margin:0 auto;
-        padding:14px 22px;
+        padding:16px 22px;
         display:flex;
         align-items:center;
         gap:18px;
@@ -51,12 +56,13 @@
         font-weight:700;
         word-break:keep-all;
         line-height:1.3;
+        color:var(--text);
     }
-    h1 .mark{color:var(--gold-soft); margin-right:6px;}
+    h1 .mark{color:var(--gold); margin-right:6px;}
     .sub{
         margin:5px 0 0;
         font-size:13.5px;
-        color:#e6dccb;
+        color:var(--text-dim);
         font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
         word-break:keep-all;
         line-height:1.45;
@@ -69,8 +75,8 @@
         font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
         font-size:14px;
     }
-    .author{color:#f4ecdd; white-space:nowrap;}
-    .author b{color:#fff;}
+    .author{color:var(--text-soft); white-space:nowrap;}
+    .author b{color:var(--text);}
     .btn-call{
         display:inline-flex;
         align-items:center;
@@ -83,7 +89,7 @@
         font-weight:700;
         font-size:14.5px;
         white-space:nowrap;
-        box-shadow:0 3px 10px rgba(0,0,0,.25);
+        box-shadow:0 3px 10px rgba(0,0,0,.45);
         transition:background .2s ease, transform .2s ease;
     }
     .btn-call:hover{background:#219150; transform:translateY(-1px);}
@@ -92,49 +98,78 @@
     main{
         flex:1 1 auto;
         display:flex;
+        flex-direction:column;
         width:100%;
         max-width:1440px;
         margin:0 auto;
         padding:14px 14px 10px;
         min-height:560px;
         height:78vh;
+        background:var(--bg);
     }
     .calendar-frame{
         flex:1 1 auto;
         width:100%;
         min-width:0;
-        border:1px solid #e4dccb;
+        min-height:0;
+        border:1px solid var(--line);
         border-radius:12px;
         overflow:hidden;
-        background:#fff;
-        box-shadow:0 6px 22px rgba(44,30,18,.10);
+        background:var(--surface);
+        box-shadow:0 10px 34px rgba(0,0,0,.65);
     }
     .calendar-frame iframe{
         display:block;
         width:100%;
         height:100%;
         border:0;
+        background:var(--surface);
+        /* 구글 캘린더 임베드를 까만 바탕·흰 글자로 반전 */
+        filter:invert(0.93) hue-rotate(180deg) contrast(1.08);
+    }
+    .calendar-caption{
+        display:flex;
+        align-items:center;
+        gap:9px;
+        margin:11px 4px 0;
+        color:var(--text);
+        font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+        font-size:15px;
+        font-weight:700;
+        letter-spacing:.3px;
+        line-height:1.4;
+        word-break:keep-all;
+    }
+    .calendar-caption::before{
+        content:"";
+        display:block;
+        width:3px;
+        height:15px;
+        border-radius:2px;
+        background:var(--gold);
+        flex:0 0 auto;
     }
 
     /* ── 하단 ── */
     footer{
-        background:var(--ink);
-        color:#cbbfa8;
+        background:var(--bg);
+        color:var(--text-dim);
+        border-top:1px solid var(--line);
         text-align:center;
         font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;
         font-size:12.5px;
         line-height:1.6;
-        padding:12px 16px;
+        padding:14px 16px;
     }
-    footer b{color:#efe4cd; font-weight:600;}
+    footer b{color:var(--text-soft); font-weight:600;}
 
     @media (max-width:760px){
-        .bar{padding:12px 14px; gap:10px;}
+        .bar{padding:13px 14px; gap:10px;}
         .title-box{flex:1 1 100%;}
         .meta{flex:1 1 100%; justify-content:space-between;}
         .btn-call{padding:8px 14px; font-size:14px;}
-        main{height:auto; padding:10px 8px 8px; flex:1 1 auto;}
-        main{min-height:600px;}
+        main{height:auto; padding:10px 8px 8px; flex:1 1 auto; min-height:600px;}
+        .calendar-caption{font-size:14px; margin:10px 2px 0;}
     }
 </style>
 </head>
@@ -155,8 +190,9 @@
 
 <main>
     <div class="calendar-frame">
-        <iframe src="https://calendar.google.com/calendar/embed?src=27eaa1521815b7168379477f523657dcb327ee03e8e881f32a610b0cf7d506dd%40group.calendar.google.com&ctz=Asia%2FSeoul" frameborder="0" scrolling="no" title="전국시낭송대회 일정 캘린더"></iframe>
+        <iframe src="https://calendar.google.com/calendar/embed?src=27eaa1521815b7168379477f523657dcb327ee03e8e881f32a610b0cf7d506dd%40group.calendar.google.com&ctz=Asia%2FSeoul&showTitle=0&showCalendars=0" frameborder="0" scrolling="no" title="전국시낭송대회 일정 캘린더"></iframe>
     </div>
+    <p class="calendar-caption">전국 시낭송대회 일정표</p>
 </main>
 
 <footer>
