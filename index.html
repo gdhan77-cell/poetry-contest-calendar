@@ -168,7 +168,9 @@
         .title-box{flex:1 1 100%;}
         .meta{flex:1 1 100%; justify-content:space-between;}
         .btn-call{padding:8px 14px; font-size:14px;}
-        main{height:auto; padding:10px 8px 8px; flex:1 1 auto; min-height:600px;}
+        main{height:auto; padding:10px 8px 8px; flex:1 1 auto; min-height:0;}
+        /* 모바일: iframe 높이가 확정되도록 프레임 높이를 고정 (auto면 임베드가 150px로 그려짐) */
+        .calendar-frame{flex:0 0 auto; height:66vh; min-height:460px; max-height:760px;}
         .calendar-caption{font-size:14px; margin:10px 2px 0;}
     }
 </style>
